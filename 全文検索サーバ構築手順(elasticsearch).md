@@ -167,7 +167,7 @@
 	chkconfig logstash on
 	chkconfig logstash --list
 
-###### 試験的にデータをmysqlから入れてみる ファイルの場所はどこでも良い
+###### 試験的にデータをmysqlから入れてみる ファイルの名前は何でも良い
 	vi /usr/local/logstash/＜テキトーな名前をつける＞.conf
 
 ---
@@ -200,7 +200,6 @@
 
 ###### 成功したか、確認する
 	curl localhost:9200/_cat/indices
-	yellow open mst_bkn 5 1 10000 0 1.3mb 1.3mb
 
 
 
