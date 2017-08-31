@@ -41,7 +41,7 @@ http://symfoware.blog68.fc2.com/blog-entry-1899.html
 ###### 下記一行追加
 	-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
 
-###### 変更を反映させる
+###### 変更を反映させる 
 	/etc/init.d/iptables restart
 
 ###### 映してみる
