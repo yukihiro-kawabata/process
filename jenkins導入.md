@@ -20,6 +20,10 @@ http://symfoware.blog68.fc2.com/blog-entry-1899.html
 
 ---
 
+###### javaをインストールする
+	yum install -y java-1.8.0-openjdk
+    yum install -y java-1.8.0-openjdk-devel
+
 ###### リポジトリに追加
 	wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 	rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
@@ -27,13 +31,15 @@ http://symfoware.blog68.fc2.com/blog-entry-1899.html
 ###### インストール
 	yum install jenkins
 
+---
+
 ###### 起動させる
 	service jenkins start
 
 ###### 自動起動の設定
 	chkconfig jenkins on
 
-----
+
 
 ###### ポート開ける
 	vi /etc/sysconfig/iptables
@@ -41,14 +47,13 @@ http://symfoware.blog68.fc2.com/blog-entry-1899.html
 ###### 下記一行追加
 	-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
 
+---
+
 ###### 変更を反映させる
 	/etc/init.d/iptables restart
 
 ###### 映してみる
 	http://＜IPアドレス＞:8080/
-
-
----
 
 ###### パスワード確認
 	cat /var/lib/jenkins/secrets/initialAdminPassword
