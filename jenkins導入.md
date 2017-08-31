@@ -38,10 +38,10 @@ http://symfoware.blog68.fc2.com/blog-entry-1899.html
 ###### ポート開ける
 	vi /etc/sysconfig/iptables
 
-###### 下記一行追加 8080でいいのか？？
+###### 下記一行追加
 	-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
 
-###### もともと止まってるはず・・・・
+###### 設定を反映させる
 	/etc/init.d/iptables restart
 
 ###### 映してみる
