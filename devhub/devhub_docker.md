@@ -11,7 +11,6 @@
 
 ###### docker でインストールする
   参考URL：https://hub.docker.com/r/ysaotome/devhub/
-  
   # コマンドライン
   docker run -d -p 3000:3000 --name=devhub ysaotome/devhub
 
