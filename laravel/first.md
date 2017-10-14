@@ -14,8 +14,8 @@
 - XML PHP拡張
 
 composer のインストール
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+    curl -sS https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
 
 
 composer global require "laravel/installer"
