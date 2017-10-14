@@ -18,7 +18,7 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 
-composer global require "laravel/installer=~1.1"
+composer global require "laravel/installer"
 
 ###### 環境変数を設定
 PATH=$PATH:~/.composer/vendor/bin
