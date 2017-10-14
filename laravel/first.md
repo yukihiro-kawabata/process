@@ -13,33 +13,40 @@
 - Tokenizer PHP拡張
 - XML PHP拡張
 
+---------
+
 ###### composer のインストール
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
 
+###### composer でlaravelをインストール
+    composer global require "laravel/installer"
 
-composer global require "laravel/installer"
+---------
 
 ###### 環境変数を設定
-PATH=$PATH:~/.composer/vendor/bin
-export PATH
-
+    PATH=$PATH:~/.composer/vendor/bin
+    export PATH
 
 ###### プロジェクト作成
-laravel new プロジェクト名
+    laravel new プロジェクト名
 
 これでフォルダも作成された
 
+---------
+
 ###### 上手くいかない場合
-composer create-project --prefer-dist laravel/laravel プロジェクト名
+    composer create-project --prefer-dist laravel/laravel プロジェクト名
 
 
 ###### サーバ側で設定
 ドキュメントルートを publicディレクトリになるように設定
 
 ###### 権限設定
-chmod -R 777 storage
-chmod -R 777 bootstrap/cache
+    chmod -R 777 storage
+    chmod -R 777 bootstrap/cache
+
+---------
 
 ###### アプリケーションキーの設定
 .env で設定する
@@ -54,20 +61,15 @@ vi config/app.php
 ###### 設定を保存
 php artisan serve
 
+---------
+
 ###### mvcなど作成
-Controller
+###### app/Http/Controllersにコントローラが作成される
+    php artisan make:controller TestController
 
-app/Http/Controllers
-php artisan make:controller TestController
+###### app/にモデルが作成される
+    php artisan make:model TestModel
 
+###### resources/viewsにビューが作成される
 
-Model
-
-app/
-php artisan make:model TestModel
-
-
-View
-
-resources/views
 
