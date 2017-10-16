@@ -6,7 +6,7 @@
 
 必要な環境
 
-- PHP >= 5.6.4
+- PHP >= 7.0
 - OpenSSL PHP拡張
 - PDO PHP拡張
 - Mbstring PHP拡張
