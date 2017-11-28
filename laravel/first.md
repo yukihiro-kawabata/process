@@ -72,4 +72,58 @@ php artisan serve
 
 ###### resources/viewsにビューが作成される
 
+----------
 
+##### バーチャルホスト設定
+
+    <VirtualHost *:80>
+        DocumentRoot C:/xampp/htdocs
+        ServerName localhost
+    </VirtualHost>
+        <Directory "C:/xampp/htdocs">
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+
+    ############################## local.laravel.jp
+    <VirtualHost *:80>
+        DocumentRoot C:\workspace\home\laravel.jp\public
+        ServerName laravel.jp
+        ServerAlias local.laravel.jp
+        ErrorLog logs/laravel.jp_error.log
+    </VirtualHost>
+        <Directory "C:\workspace\home\laravel.jp\public">
+            Options Indexes FollowSymLinks Includes ExecCGI
+            AllowOverride All
+            Require all granted
+        </Directory>
+    
+    ------------------  
+    # Linuxの場合は下記を記載する
+    
+        <VirtualHost *:80>
+        ServerName localhost
+        DocumentRoot /var/www/html/
+    </VirtualHost>
+    <Directory /var/www/html/ >
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    <VirtualHost *:80>
+        ServerName laravel
+        ServerAlias vm.laravel.jp
+        DocumentRoot /home/laravel/public
+        ErrorLog /var/log/httpd/laravel_error_log
+        CustomLog "logs/dos_suspect_log" dos_suspect env=SuspectDoS
+        CustomLog /var/log/httpd/laravel_access_log combined env=!no_log
+    </VirtualHost>
+    <Directory /home/laravel/public >
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
