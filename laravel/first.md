@@ -100,9 +100,10 @@ php artisan serve
         </Directory>
     
     ------------------  
+    
     # Linuxの場合は下記を記載する
     
-        <VirtualHost *:80>
+    <VirtualHost *:80>
         ServerName localhost
         DocumentRoot /var/www/html/
     </VirtualHost>
