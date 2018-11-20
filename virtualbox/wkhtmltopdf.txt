@@ -1,0 +1,35 @@
+# wkhtmltopdf
+'''''
+yum install -y --enablerepo=remi --enablerepo=remi-php70 ImageMagick php-pecl-imagick
+yum install libjpeg-turbo-devel
+
+### 動作確認
+convert -version
+
+### ライブラリ確認
+ldconfig -p | grep libmagic
+
+### 確認
+php -r '$i = new Imagick();$v = $i->getVersion();echo $v["versionString"] . PHP_EOL;'
+
+### 反映
+service httpd restart
+
+
+### wkhtmltopdf
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2/wkhtmltox-0.12.2_linux-centos6-amd64.rpm
+yum install -y xorg-x11-fonts-75dpi
+yum install -y xorg-x11-fonts-Type1
+rpm -ivh wkhtmltox-0.12.2_linux-centos6-amd64.rpm
+cd /usr/local/bin 
+wget http://download.gna.org/wkhtmltopdf/0.12/0.12.3/wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+xz -dv wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+tar -xf wkhtmltox-0.12.3_linux-generic-amd64.tar
+ln -s wkhtmltox/bin/wkhtmltopdf wkhtmltopdf
+
+### 確認
+# wkhtmltopdf https://google.com と打ってファイルが作られれば成功！ 
+
+### snappy
+yum install -y snappy-devel
+'''''
