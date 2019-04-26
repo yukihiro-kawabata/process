@@ -48,8 +48,15 @@
 
 ---------
 
+###### 環境設定
+```
+cp .env.example .env
+```
+
 ###### アプリケーションキーの設定
-.env で設定する
+```
+php artisan key:generate
+```
 
 ###### 初期設定
 vi config/app.php
