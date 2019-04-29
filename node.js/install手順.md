@@ -18,3 +18,14 @@ curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 ````
 yum install nodejs gcc-c++ make
 ````
+
+
+# ubuntuに入れる
+```
+apt-get install nodejs
+apt-get install npm
+```
+### このままではnodejsという名前になっているのでnodeという名前にする
+```
+update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+```
